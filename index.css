@@ -4,14 +4,16 @@
     box-sizing: border-box;
     font-family:poppins, sans-serif;
 }
+
 body{
-    width:390px;
-    height:800px;
+    width: 100%;
+    max-width: 390px;
+    height: auto;
+    min-height: 800px;
     border:2px solid black;
     margin:0 auto;
-
-
 }
+
 nav{
     width:100%;
     height:213px;
@@ -19,27 +21,30 @@ nav{
     display:flex;
     align-items: center;
     justify-content: center;
-    
 }
+
 nav h1{
-    font-size:43px;
+    font-size: clamp(28px, 8vw, 43px);
     color:#32CD32;
     font-weight:900;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
 }
+
 nav p{
     color:#ffffff;
     font-weight:500;
-    font-size:12px;
+    font-size: clamp(10px, 3vw, 12px);
     text-align: center;
-    
 }
+
 nav img{
-    width:94px;
+    width: clamp(60px, 20vw, 94px);
 }
+
 main{
-    width:362px;
+    width: calc(100% - 28px);
+    max-width: 362px;
     height:535px;
     border:2px solid #252F42;
     border-radius:15px;
@@ -49,12 +54,11 @@ main{
     -o-border-radius:15px;
     margin:30px auto 0px;
     padding:1rem;
-   
     display: flex;
     flex-direction: column;
-    
     font-size:20px;
 }
+
 main *{
    border-radius: 15px;
    -webkit-border-radius: 15px;
@@ -63,60 +67,69 @@ main *{
    -o-border-radius: 15px;
    font-weight:500;
 }
+
 .instruction-box,.user-input-box,.system-ans{
-    max-width:313px;
+    max-width: 85%;
     padding:15px;        
-  word-wrap: break-word; 
-  overflow-wrap: break-word; 
-  white-space: normal;   
-    font-size:16px;
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
+    white-space: normal;   
+    font-size: clamp(14px, 4vw, 16px);
     font-weight:500;
     align-items: center;
-     text-align:left;
-
+    text-align:left;
 }
+
 .instruction-box,.system-ans{
-background-color:#035A9D;
+    background-color:#035A9D;
     color:#ffffff;
     align-self: flex-start; 
 }
+
+.instruction-box {
+    align-self: center;
+}
+
 .system-ans{
- margin: 0 auto 0 0 ;
+    margin: 0 auto 0 0 ;
 }
+
 .user-input-box{
-background-color: #65DA65;
-color:black;
-align-self: flex-end; 
+    background-color: #65DA65;
+    color:black;
+    align-self: flex-end; 
 }
+
 .lang{
     width:100%;
 }
- .chat {
+
+.chat {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 100%;
-    height: 280px;  /* Add fixed height */
-    overflow-y: auto;  /* Enable vertical scrolling */
+    height: 280px;
+    overflow-y: auto;
     margin-bottom: 30px;
     scroll-behavior: smooth;
     padding-right: 5px;
 }
 
-/* Smooth scroll to bottom when new messages appear */
 .chat {
     scroll-behavior: smooth;
 }
+
 select{
     width:90%;
     height:40px;
     margin:20px auto;
     display:block;
     text-align: center;
-    font-size:16px;
+    font-size: clamp(14px, 4vw, 16px);
     font-weight:500;
-
 }
+
 .input-container{
     position: relative;
     width: 100%;
@@ -129,9 +142,9 @@ select{
     height: 50px;
     border: 1px solid #586E88;
     background-color: #F5F5F5;
-    font-size: 16px;
+    font-size: clamp(14px, 4vw, 16px);
     padding: 5px 50px 5px 15px;
-    /*Rightpaddingforicon*/border-radius: 15px;
+    border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
@@ -140,14 +153,16 @@ select{
 
 .send-btn{
     position: absolute;
-    right: 15px;  /* Inside the input box */
+    right: 15px;
     font-size: 18px;
     color: #32CD32;
     cursor: pointer;
 } 
+
 .send-btn:hover{
     color:#0f5b0f;
 }   
+
 /* Custom scrollbar */
 .chat::-webkit-scrollbar {
     width: 6px;
@@ -165,4 +180,179 @@ select{
 
 .chat::-webkit-scrollbar-thumb:hover {
     background: #555;
-}                                                                                                                                                                 
+}
+
+/* Responsive breakpoints - keeping original styles */
+
+/* Small mobile devices (320px and up) */
+@media (max-width: 480px) {
+    body {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        border: none;
+        padding: 5px;
+    }
+    
+    body > * {
+        border: 2px solid black;
+        margin: 0 auto;
+    }
+    
+    nav {
+        height: 180px;
+    }
+    
+    main {
+        width: calc(100% - 20px);
+        margin: 20px auto 0px;
+        padding: 0.8rem;
+    }
+    
+    .instruction-box, .user-input-box, .system-ans {
+        max-width: 90%;
+        padding: 12px;
+    }
+}
+
+/* Medium devices (tablets, 481px and up) */
+@media (min-width: 481px) and (max-width: 768px) {
+    body {
+        max-width: 500px;
+    }
+    
+    nav {
+        height: 200px;
+    }
+    
+    main {
+        max-width: 450px;
+    }
+    
+    .instruction-box, .user-input-box, .system-ans {
+        max-width: 80%;
+    }
+}
+
+/* Large devices (desktops, 769px and up) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        max-width: 600px;
+    }
+    
+    nav {
+        height: 220px;
+    }
+    
+    main {
+        max-width: 550px;
+    }
+    
+    .instruction-box, .user-input-box, .system-ans {
+        max-width: 75%;
+    }
+    
+    select {
+        width: 70%;
+    }
+    
+    .input-container {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .input-container input {
+        height: 55px;
+    }
+}
+
+/* Extra large devices (large desktops, 1025px and up) */
+@media (min-width: 1025px) {
+    body {
+        max-width: 700px;
+        margin: 20px auto;
+    }
+    
+    nav {
+        height: 240px;
+    }
+    
+    main {
+        max-width: 650px;
+    }
+    
+    .instruction-box, .user-input-box, .system-ans {
+        max-width: 70%;
+        padding: 18px;
+    }
+    
+    select {
+        width: 70%;
+    }
+    
+    .input-container {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .input-container input {
+        height: 60px;
+    }
+    
+    .send-btn {
+        font-size: 20px;
+    }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1440px) {
+    body {
+        max-width: 800px;
+    }
+    
+    main {
+        max-width: 750px;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+    body {
+        max-width: 100%;
+        border: none;
+        padding: 5px;
+    }
+    
+    body > * {
+        border: 2px solid black;
+    }
+    
+    nav {
+        height: 120px;
+    }
+    
+    main {
+        padding: 0.5rem;
+        height: auto;
+        min-height: 400px;
+    }
+    
+    .chat {
+        height: 200px;
+    }
+    
+    .instruction-box, .user-input-box, .system-ans {
+        padding: 8px 12px;
+    }
+    
+    select {
+        height: 35px;
+        margin: 10px auto;
+    }
+    
+    .input-container input {
+        height: 40px;
+    }
+}
