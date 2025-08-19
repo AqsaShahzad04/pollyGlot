@@ -1,5 +1,5 @@
 import { GoogleGenerativeAI } from '@google/generative-ai'
-const gemini = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY)
+const gemini = new GoogleGenerativeAI(import.meta.env.VITE_GOOGLE_API_KEY)
 
 
 export async function getTranslation(query,lang) {
