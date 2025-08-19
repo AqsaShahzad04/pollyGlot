@@ -25,7 +25,7 @@ Btn.addEventListener('click', async() => {
     }
   }
   catch (error) {
-    document.alert(error)
+    console.log(error)
   }
 
 })

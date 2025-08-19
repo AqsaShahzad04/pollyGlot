@@ -12,7 +12,7 @@ export async function getTranslation(query,lang) {
            return data.text()      
   }
   catch (error) {
-      document.alert(error)
+     console.log(error)
       return null
   }
 }
