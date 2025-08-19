@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <!-- Your HTML here -->
+         <nav>
+            <img src="assets/parrot.png" alt="a parrot">
+            <div class="nav-headings">
+                <h1>PollyGlot</h1>
+                <p>Perfect translation everytime</p>
+            </div>
+         </nav>
+         <main>
+            <div class="instruction-box">
+            Select the language you want me to translate into, type your text and hit send!
+            </div>
+             <div class="lang">
+                <select name="language" id="language">
+                <option value="">Select a language</option>
+                <!-- Asian & Middle Eastern -->
+                <option value="Mandarin Chinese">Mandarin Chinese (China)</option>
+                <option value="Hindi">Hindi (India)</option>
+                <option value="Urdu">Urdu (Pakistan)</option>
+                <option value="Arabic">Arabic (Saudi Arabia)</option>
+                <option value="Bengali">Bengali (Bangladesh)</option>
+                <option value="Japanese">Japanese (Japan)</option>
+                <option value="Korean">Korean (South Korea)</option>
+                <option value="Turkish">Turkish (Turkey)</option>
+                <option value="Persian">Persian / Farsi (Iran)</option>
+                <option value="Malay">Malay (Malaysia)</option>
+                <option value="Thai">Thai (Thailand)</option>
+                <option value="Vietnamese">Vietnamese (Vietnam)</option>
+                <option value="Hebrew">Hebrew (Israel)</option>
+
+                <!-- European -->
+                <option value="English" selected>English (United Kingdom / USA)</option>
+                <option value="Spanish">Spanish (Spain)</option>
+                <option value="French">French (France)</option>
+                <option value="German">German (Germany)</option>
+                <option value="Italian">Italian (Italy)</option>
+                <option value="Portuguese">Portuguese (Portugal / Brazil)</option>
+                <option value="Russian">Russian (Russia)</option>
+                <option value="Dutch">Dutch (Netherlands)</option>
+                <option value="Greek">Greek (Greece)</option>
+                <option value="Polish">Polish (Poland)</option>
+                <option value="Swedish">Swedish (Sweden)</option>
+
+                <!-- Other major -->
+                <option value="Swahili">Swahili (Kenya)</option>
+                </select>
+
+            </div>
+            <div class="chat">
+                <!-- <div class="user-input-box">
+                    How are you?
+                </div>
+                <div class="system-ans">
+                    Comment allez-vous?
+                </div>
+                  <div class="user-input-box">
+                    Good boy
+                </div>
+                <div class="system-ans">
+                    Anything else you want me to translate?
+                </div>
+                <div class="user-input-box">
+                    No
+                </div> -->
+            </div>
+            </div>
+            <div class="input-container">
+                <input type="text" id="user-input" name="user-input" >
+                <i class="fa-regular fa-paper-plane send-btn"></i>
+            </div>
+           
+
+         </main>
+        <script src="index.js" type="module"></script>
+    </body>
+</html>
